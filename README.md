@@ -1,4 +1,6 @@
 
+# STILL IN DEVELOPMENT
+
 # Serverless send E-mails
 
 This is a serverless project that utilizes Amazon SES for email sending, Handlebars for customized email templates, MongoDB for template storage, and Amazon SQS for background task processing.
