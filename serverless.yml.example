@@ -1,0 +1,32 @@
+service: email
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x 
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  vpc:
+    securityGroupIds:
+      - 
+    subnetIds:
+      - 
+      - 
+    
+plugins:
+  - serverless-offline
+
+
+functions: 
+  send:
+    handler: src/handler.send
+    events:
+      - sqs: 
+          arn: ''
+          batchSize: 100
+    reservedConcurrency: 100
+
+package: 
+  exclude:
+    - src/**
+
